@@ -1,0 +1,30 @@
+# EditorConfig for SocOps
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.cs]
+# Unused variable/assignment and parameter rules
+dotnet_diagnostic.CS0168.severity = warning   # Variable declared but never used
+dotnet_diagnostic.IDE0059.severity = warning  # Unnecessary assignment
+dotnet_diagnostic.IDE0060.severity = warning  # Unused parameter
+
+# Async/await usage rules
+dotnet_diagnostic.CS1998.severity = warning   # Async method lacks await
+dotnet_diagnostic.CS4014.severity = warning   # Call not awaited
+dotnet_diagnostic.VSTHRD200.severity = warning # Use Async suffix for async methods
+csharp_style_prefer_async_over_sync = true:warning
+
+dotnet_code_quality_unused_parameters = all:warning
+
+[*.{json,yml,yaml}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
